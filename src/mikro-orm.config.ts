@@ -1,14 +1,16 @@
 import { Post } from "./entities/Post";
 import { __prod__ } from "./constants";
-import { Options } from "@mikro-orm/core";
+import { MikroORM } from "@mikro-orm/core";
 
-const microConfig: Options =  {
+export default {
   entities: [Post],
-  dbName: 'fullstackboilerplate',
+  dbName: 'fullstack',
+  migrations: {
+    path: './migrations', // path to the folder with migrations
+    pattern: /^[\w-]+\d+\.ts$/, // regex pattern for the migration files
+  },
   type: 'postgresql',
   user: 'postgres',
   password: 'postgres',
   debug: !__prod__,
-};
-
-export default microConfig;
+} as Parameters<typeof MikroORM.init>[0];
