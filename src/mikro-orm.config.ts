@@ -6,8 +6,8 @@ export default {
   entities: [Post],
   dbName: 'fullstack',
   migrations: {
-    path: './migrations', // path to the folder with migrations
-    pattern: /^[\w-]+\d+\.ts$/, // regex pattern for the migration files
+    path: './migrations',
+    pattern: /^[\w-]+\d+\.ts$/,
   },
   type: 'postgresql',
   user: 'postgres',
