@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { MikroORM } from "@mikro-orm/core";
 import { __prod__ } from "./constants";
 import microConfig from "./mikro-orm.config";
@@ -23,7 +24,6 @@ const main = async () => {
 
   await apolloServer.start();
   apolloServer.applyMiddleware({ app });
-
 
   app.listen(4000, () => {
     console.log('started on localhost/:4000')
